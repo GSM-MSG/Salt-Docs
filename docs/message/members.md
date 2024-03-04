@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Manage Docs Versions
+# /members - 멤버 목록
 
 Docusaurus can manage multiple versions of your docs.
 

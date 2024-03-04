@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Translate your site
+# /delete-schedule - 일정 삭제하기
 
 Let's translate `docs/intro.md` to French.
 
