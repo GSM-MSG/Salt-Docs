@@ -4,52 +4,10 @@ sidebar_position: 1
 
 # /members - 멤버 목록
 
-Docusaurus can manage multiple versions of your docs.
+> 명령어 : `**/members (optional)role:(디스코드 역할)**`
 
-## Create a docs version
+MSG 디스코드에 있는 팀원들의 유저정보를 가져와요.
 
-Release a version 1.0 of your project:
+해당 팀원의 username (디스코드 ID), 역할들을 보여줘요.
 
-```bash
-npm run docusaurus docs:version 1.0
-```
-
-The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
-
-Your docs now have 2 versions:
-
-- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
-- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
-
-## Add a Version Dropdown
-
-To navigate seamlessly across versions, add a version dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-export default {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-The docs version dropdown appears in your navbar:
-
-![Docs Version Dropdown](./img/docsVersionDropdown.png)
-
-## Update an existing version
-
-It is possible to edit versioned docs in their respective folder:
-
-- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
-- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`
+가져온 usernames 문자열은 복사하면 바로 DM 일괄 보내기로도 사용할 수 있어요

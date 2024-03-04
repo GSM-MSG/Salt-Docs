@@ -4,85 +4,37 @@ sidebar_position: 2
 
 # /add-schedule - 일정 추가하기
 
-Let's translate `docs/intro.md` to French.
+# 일정 등록
 
-## Configure i18n
+> 명령어 : `/add-schedule`
 
-Modify `docusaurus.config.js` to add support for the `fr` locale:
+- 일정의 `이름`, `내용`, `날짜`, `알림 보낼 채널`, `반복 활성화 여부`, `반복 시간 패턴`, `15분 전 리마인더 활성화 여부`, `멘션 대상` 에 대한 정보를 입력해서 새 일정을 소금이에게 알려줄 수 있어요!
+- 등록한 일정은, 이후에 시간이 될때 소금이가 리마인더, 알림을 해줘요!
 
-```js title="docusaurus.config.js"
-export default {
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'fr'],
-  },
-};
-```
-
-## Translate a doc
-
-Copy the `docs/intro.md` file to the `i18n/fr` folder:
-
-```bash
-mkdir -p i18n/fr/docusaurus-plugin-content-docs/current/
-
-cp docs/intro.md i18n/fr/docusaurus-plugin-content-docs/current/intro.md
-```
-
-Translate `i18n/fr/docusaurus-plugin-content-docs/current/intro.md` in French.
-
-## Start your localized site
-
-Start your site on the French locale:
-
-```bash
-npm run start -- --locale fr
-```
-
-Your localized site is accessible at [http://localhost:3000/fr/](http://localhost:3000/fr/) and the `Getting Started` page is translated.
-
-:::caution
-
-In development, you can only use one locale at a time.
-
-:::
-
-## Add a Locale Dropdown
-
-To navigate seamlessly across languages, add a locale dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-export default {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'localeDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-The locale dropdown now appears in your navbar:
-
-![Locale Dropdown](./img/localeDropdown.png)
-
-## Build your localized site
-
-Build your site for a specific locale:
-
-```bash
-npm run build -- --locale fr
-```
-
-Or build your site to include all the locales at once:
-
-```bash
-npm run build
-```
+- 이름
+    - 일정의 이름을 입력해주세요
+- 내용
+    - 일정의 내용을 입력해주세요
+    - 회의 주제, 회의록 링크, 피그잼 링크, 회의 장소(홈베이스, 회의 음성 채팅방 링크) 등을 일정의 자세한 내용이나 링크같은걸 입력해주면 좋아요!
+- 날짜
+    - 일정의 알림을 보낼 날짜를 입력해주세요
+    - yyyy/MM/dd HH:mm
+    - 24시간 포맷으로 입력해주셔야해요.. 🥺
+- 알림 보낼 채널
+    - 일정의 날짜에 도달하면 알림을 보낼 채널을 멘션해주세요
+    - 디코에서 # 을 입력하면 채널을 멘션할 수 있어요
+- 반복 활성화 여부
+    - 일정이 반복하는지에 대한 여부를 입력해주세요
+    - [ true or false ]
+- 반복 시간 패턴
+    - 일정이 반복한다면, 어떤 주기마다 일정이 반복되는지 입력해주세요
+    - [ w = 주, d = 일, h = 시간, m = 분 ]
+    - e.g. 2w = 2주마다, 10d = 10일마다, 4h = 4시간마다
+- 15분 전 리마인더 활성화 여부
+    - 일정이 시작되기 15분 전에 리마인더를 보내줄지 여부를 입력해주세요
+    - [ true or false ]
+- 멘션 대상
+    - 일정에 참여하는 유저들을 멘션해주세요
+    - 여러개 입력해도 되고 역할이랑 유저랑 동시에 멘션해도 돼요!
+    - e.g. @iOS @Android = iOS역할을 가진 유저, Android역할을 가진 유저 모두가 일정에 참여하는거로 돼요
+    - e.g. @iOS @누군가의디스코드ID = iOS 역할을 가진 유저, 멘션된 유저 모두가 일정에 참여하는거로 돼요
